@@ -43,9 +43,9 @@ let runTests container =
     for mtd in koanMethods do
         match lastTestMethod with
         | Success -> lastTestMethod <- getTestResult mtd
-        | Failure msg -> lastTestMethod <- getTestResult mtd
+        | Failure msg -> ()
     
-    Success
+    lastTestMethod
         
 let mutable lastTestModule = Success
 for m in allModules do
