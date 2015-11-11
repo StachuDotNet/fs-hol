@@ -55,8 +55,6 @@ module ``about the stock example`` =
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
 
-    type Row = { Date: string; High: float; Low: float }
-
     [<Test>]
     let ``you got the answer correct``() =
         

@@ -31,8 +31,8 @@ let runTests container =
         let result = m.Invoke(null, [||]) :?> Result
 
         match result with 
-        | Success -> printfn "\t%s passed" m.Name
-        | Failure msg -> printfn "\t%s failed." m.Name
+        | Success -> printfn "\t\"%s\" passed" m.Name
+        | Failure msg -> printfn "\t\"%s\" failed." m.Name
 
         result
     
@@ -51,13 +51,13 @@ let mutable lastTestModule = Success
 for m in allModules do
     match lastTestModule with
     | Success -> 
-        printfn "%s:" m.Name
+        printfn "\n%s:" m.Name
         lastTestModule <- runTests m
     | Failure msg -> ()
     ()
 
 match lastTestModule with
-    | Success -> printfn "Good job, we're done! Go home or something!"
-    | Failure msg -> printfn "Failure message: \n%A" msg
+    | Success -> printfn "\nGood job, we're done! Go home or something!"
+    | Failure msg -> printfn "\nFailure message: \n%A" msg
 
 System.Console.ReadLine() |> ignore
