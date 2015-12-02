@@ -1,0 +1,4 @@
+type Sql = 
+    SqlDataProvider<
+        "Server=SQL5011.Smarterasp.net;Database=DB_9AB22B_pdnfshol;User Id=ReadOnlyHolUser;Password=SuperSecret",
+        DatabaseVendor=Common.DatabaseProviderTypes.MSSQLSERVER>
